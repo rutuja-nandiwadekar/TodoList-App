@@ -1,17 +1,27 @@
-import React from "react";
+
+import React, { useState } from "react";
+
 
 function Form(props) {
+    const [name, setName] = useState('');
 
-    const btn = document.querySelector('button');
 
-    btn.addEventListener('click', () => {
-        alert("hi!");
-    });
+    // const btn = document.querySelector('button');
+
+    // btn.addEventListener('click', () => {
+    //     alert("hi!");
+    // });
 
     function handleSubmit(e) {
         e.preventDefault();
-        alert('Hello, world!');
+        alert('Added successfully!');
     }
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        props.addTask("Say hello!");
+    }
+
 
     return (
         <form onSubmit={handleSubmit}>
@@ -26,7 +36,9 @@ function Form(props) {
                 className="input input__lg"
                 name="text"
                 autoComplete="off"
+                value={name}
             />
+
             <button type="submit" className="btn btn__primary btn__lg" onClick={() => alert("hi!")}>
                 Add
             </button>
