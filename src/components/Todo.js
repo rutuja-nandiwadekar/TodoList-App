@@ -21,8 +21,8 @@ export default function Todo(props) {
           value={newName}
           onChange={handleChange}
         />
-
       </div>
+
       <div className="btn-group">
         <button
           type="button"
@@ -38,10 +38,13 @@ export default function Todo(props) {
           <span className="visually-hidden">new name for {props.name}</span>
         </button>
       </div>
+
     </form>
   );
+
   const viewTemplate = (
     <div className="stack-small">
+
       <div className="c-cb">
         <input
           id={props.id}
@@ -53,6 +56,7 @@ export default function Todo(props) {
           {props.name}
         </label>
       </div>
+
       <div className="btn-group">
         <button type="button" className="btn" onClick={() => setEditing(true)}>
           Edit <span className="visually-hidden">{props.name}</span>
@@ -66,6 +70,7 @@ export default function Todo(props) {
           Delete <span className="visually-hidden">{props.name}</span>
         </button>
       </div>
+
     </div>
   );
 
@@ -79,12 +84,8 @@ export default function Todo(props) {
     setNewName("");
     setEditing(false);
   }
-  
-
-
 
   return (
     <li className="todo">{isEditing ? editingTemplate : viewTemplate}</li>
-
   );
 }
